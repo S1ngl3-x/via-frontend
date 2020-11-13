@@ -7,6 +7,13 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL:
+        process.env.API_URL || 'https://celebrity-app-backend.herokuapp.com/',
+    },
+  },
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - celebrity-app-frontend',
