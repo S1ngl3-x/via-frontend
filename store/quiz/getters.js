@@ -1,5 +1,5 @@
 export default {
-  user(state) {
+  quiz(state) {
     return state.quiz;
   },
 };

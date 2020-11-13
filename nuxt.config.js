@@ -9,6 +9,7 @@ export default {
 
   publicRuntimeConfig: {
     axios: {
+      withCredentials: true,
       browserBaseURL:
         process.env.API_URL || 'https://celebrity-app-backend.herokuapp.com/',
     },
@@ -30,7 +31,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: ['~/plugins/axios'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -50,13 +51,15 @@ export default {
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    withCredentials: true,
+  },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: false,
+      dark: true, // todo - set to false later
       themes: {
         dark: {
           primary: colors.blue.darken2,
