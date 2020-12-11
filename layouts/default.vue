@@ -54,7 +54,7 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Welcome Screen',
+          title: 'About',
           to: '/welcome',
         },
         {
@@ -66,6 +66,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Registration',
           to: '/registration',
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Testing',
+          to: '/testingPage',
         },
       ],
       miniVariant: false,

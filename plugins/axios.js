@@ -5,6 +5,6 @@ export default function ({ $axios, redirect }) {
   });
 
   $axios.onError((error) => {
-    throw new Error(`Error occurred while making request: ${error}`);
+    throw new Error(`We are sorry but a problem occurred because of ${error}`);
   });
 }
