@@ -24,7 +24,6 @@ export default {
   props: {
     id: { type: Number, required: true },
     text: { type: String, required: true },
-    type: { type: String, required: false, default: '' },
     questionNumber: { type: Number, required: true },
     quizId: { type: Number, required: true },
   },

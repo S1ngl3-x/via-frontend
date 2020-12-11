@@ -7,10 +7,6 @@ export default {
     state.quizzes = quizzes;
   },
 
-  setQuizAnswer(state, quiz) {
-    state.quizAnswer = quiz;
-  },
-
   setQuestionAnswer(state, { index, type }) {
     const updatedQuestion = state.currentQuiz.questions[index];
     updatedQuestion.answer = type;

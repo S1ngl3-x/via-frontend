@@ -5,10 +5,4 @@ export default {
   quizzes(state) {
     return state.quizzes;
   },
-  quizAnswer(state) {
-    return state.quizAnswer;
-  },
-  answers(state) {
-    return state.answers;
-  },
 };

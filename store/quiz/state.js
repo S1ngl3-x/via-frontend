@@ -5,10 +5,4 @@ export default () => ({
     questions: [],
   },
   quizzes: [],
-  quizAnswer: {
-    id: null,
-    completed: true,
-    questions: [],
-  },
-  answers: Array(5),
 });

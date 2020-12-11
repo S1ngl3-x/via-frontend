@@ -19,13 +19,8 @@ export default {
     }
   },
 
-  async submitCurrentQuiz({ commit }) {
-    const quiz = this.$store.getters['quiz/currentQuiz'];
-
-    const result = await this.$axios.$patch('quiz', quiz);
-    if (result) {
-      commit('setQuizAnswer', result);
-    }
+  async submitCurrentQuiz({ getters }) {
+    await this.$axios.$patch('quiz', getters.currentQuiz);
   },
 
   answerQuestion({ commit }, { questionNumber, type }) {
