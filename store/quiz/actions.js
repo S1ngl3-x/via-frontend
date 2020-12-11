@@ -19,8 +19,8 @@ export default {
     }
   },
 
-  async submitQuiz({ commit }, { quiz, answers }) {
-    // todo - pro kazdou question z quizu prirad odpoved z pole answers
+  async submitCurrentQuiz({ commit }) {
+    const quiz = this.$store.getters['quiz/currentQuiz'];
 
     const result = await this.$axios.$patch('quiz', quiz);
     if (result) {

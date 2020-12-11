@@ -1,5 +1,5 @@
 <template>
-  <v-btn :disabled="!readyToSubmit" class="mr-4" @click="answerQuiz"
+  <v-btn :disabled="!readyToSubmit" class="mr-4" @click="submitQuiz"
     >Submit Your Answers</v-btn
   >
 </template>
@@ -19,14 +19,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      submitQuiz: 'quiz/submitQuiz',
+      submitQuiz: 'quiz/submitCurrentQuiz',
     }),
-    answerQuiz() {
-      this.submitQuiz({
-        quiz: this.$store.getters['quiz/currentQuiz'],
-        answers: this.answers,
-      });
-    },
   },
 };
 </script>
