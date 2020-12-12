@@ -79,6 +79,7 @@ export default {
   pwa: {
     manifest: {
       name: 'Celebrity App',
+      short_name: 'Celebrity App',
     },
   },
 };
