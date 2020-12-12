@@ -8,12 +8,8 @@ export default {
     }
   },
 
-  async findQuizzes({ commit }, { limitInput, pageInput }) {
-    const limit = limitInput || 5;
-    const page = pageInput || 1;
-
-    const quizzes = await this.$axios.$get('quiz', { params: limit, page });
-
+  async findCompletedQuizzes({ commit }, { limit, page }) {
+    const quizzes = await this.$axios.$get('quiz/completed', { params: limit, page });
     if (quizzes) {
       commit('setQuizzes', quizzes);
     }

@@ -1,79 +1,17 @@
 <template>
-  <v-card max-width="400" class="mx-auto">
-    <v-system-bar color="pink darken-2" dark>
-      <v-spacer></v-spacer>
+  <v-card max-width="450" class="mx-auto">
+    <v-list three-line>
+      <template v-for="item in items">
+        <v-list-item :key="item.title">
+          <v-list-item-icon> <v-icon color="green">mdi-check</v-icon> </v-list-item-icon>
 
-      <v-icon>mdi-window-minimize</v-icon>
-
-      <v-icon>mdi-window-maximize</v-icon>
-
-      <v-icon>mdi-close</v-icon>
-    </v-system-bar>
-
-    <v-app-bar dark color="pink">
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>My Music</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-container>
-      <v-row dense>
-        <v-col cols="12">
-          <v-card color="#385F73" dark>
-            <v-card-title class="headline"> Unlimited music now </v-card-title>
-
-            <v-card-subtitle
-              >Listen to your favorite artists and albums whenever and wherever, online
-              and offline.</v-card-subtitle
-            >
-
-            <v-card-actions>
-              <v-btn text> Listen Now </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-
-        <v-col v-for="(item, i) in items" :key="i" cols="12">
-          <v-card :color="item.color" dark>
-            <div class="d-flex flex-no-wrap justify-space-between">
-              <div>
-                <v-card-title class="headline" v-text="item.title"></v-card-title>
-
-                <v-card-subtitle v-text="item.artist"></v-card-subtitle>
-
-                <v-card-actions>
-                  <v-btn
-                    v-if="item.artist === 'Ellie Goulding'"
-                    class="ml-2 mt-3"
-                    fab
-                    icon
-                    height="40px"
-                    right
-                    width="40px"
-                  >
-                    <v-icon>mdi-play</v-icon>
-                  </v-btn>
-
-                  <v-btn v-else class="ml-2 mt-5" outlined rounded small>
-                    START RADIO
-                  </v-btn>
-                </v-card-actions>
-              </div>
-
-              <v-avatar class="ma-3" size="125" tile>
-                <v-img :src="item.src"></v-img>
-              </v-avatar>
-            </div>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
+          <v-list-item-content>
+            <v-list-item-title v-html="item.title"></v-list-item-title>
+            <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+      </template>
+    </v-list>
   </v-card>
 </template>
 
@@ -82,16 +20,32 @@ export default {
   data: () => ({
     items: [
       {
-        color: '#1F7087',
-        src: 'https://cdn.vuetifyjs.com/images/cards/foster.jpg',
-        title: 'Supermodel',
-        artist: 'Foster the People',
+        avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+        title: 'Brunch this weekend?',
+        subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
       },
       {
-        color: '#952175',
-        src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
-        title: 'Halcyon Days',
-        artist: 'Ellie Goulding',
+        avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+        title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
+        subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
+      },
+      {
+        avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+        title: 'Oui oui',
+        subtitle:
+          '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
+      },
+      {
+        avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
+        title: 'Birthday gift',
+        subtitle:
+          '<span class="text--primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
+      },
+      {
+        avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
+        title: 'Recipe to try',
+        subtitle:
+          '<span class="text--primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
       },
     ],
   }),
