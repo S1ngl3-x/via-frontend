@@ -6,8 +6,8 @@
     </v-card-title>
 
     <v-card-text class="headline font-weight-bold">
-      Are you ready to fall for true and most epic love poems? But remember: "Everything
-      that falls, gets broken.
+      Are you ready to fall for true and the most epic love poems? But remember:
+      "Everything that falls, gets broken.
     </v-card-text>
 
     <v-card-actions>
