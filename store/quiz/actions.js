@@ -9,6 +9,7 @@ export default {
   },
 
   async findCompletedQuizzes({ commit }, { limit, page }) {
+    console.log(`limit is: ${limit}`);
     const quizzes = await this.$axios.$get('quiz/completed', { params: limit, page });
     if (quizzes) {
       commit('setQuizzes', quizzes);
