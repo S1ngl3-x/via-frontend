@@ -1,7 +1,9 @@
 <template>
-  <v-btn :disabled="!readyToSubmit" class="mr-4" @click="submitQuiz"
-    >Submit Your Answers</v-btn
-  >
+  <v-card-actions class="justify-center">
+    <v-btn v-show="readyToSubmit" class="mr-4" color="primary" @click="submit"
+      >Submit Your Answers</v-btn
+    >
+  </v-card-actions>
 </template>
 
 <script>
@@ -21,6 +23,10 @@ export default {
     ...mapActions({
       submitQuiz: 'quiz/submitCurrentQuiz',
     }),
+    async submit() {
+      await this.submitQuiz;
+      await this.$router.push('/results');
+    },
   },
 };
 </script>

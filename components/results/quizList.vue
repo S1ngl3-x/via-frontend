@@ -29,7 +29,7 @@ export default {
     },
   },
   created() {
-    this.findQuizzes({ limit: 100, page: 1 });
+    this.findQuizzes({ limit: 50, page: 1 });
   },
   methods: {
     ...mapActions({

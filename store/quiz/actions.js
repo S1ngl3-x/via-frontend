@@ -1,5 +1,6 @@
 export default {
   async generateQuiz({ commit }) {
+    console.log('jsem v actions');
     const quiz = await this.$axios.$post('quiz');
 
     if (quiz) {

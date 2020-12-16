@@ -4,6 +4,7 @@
       <v-app-bar dark color="pink">
         <v-toolbar-title>New Quiz</v-toolbar-title>
         <v-spacer></v-spacer>
+        <generate-quiz-button />
       </v-app-bar>
 
       <v-container>
@@ -18,15 +19,18 @@
           />
         </v-row>
       </v-container>
+      <submit-answers-button />
     </v-card>
   </div>
 </template>
 
 <script>
 import QuestionToAsk from '@/components/home/questionToAsk';
+import GenerateQuizButton from '@/components/home/buttons/generateQuizButton';
+import SubmitAnswersButton from '@/components/home/buttons/submitAnswersButton';
 export default {
   name: 'GeneratedQuiz',
-  components: { QuestionToAsk },
+  components: { SubmitAnswersButton, GenerateQuizButton, QuestionToAsk },
   computed: {
     quiz() {
       return this.$store.getters['quiz/currentQuiz'];
