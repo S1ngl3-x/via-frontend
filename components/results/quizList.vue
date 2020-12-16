@@ -35,9 +35,13 @@ export default {
   created() {
     this.findQuizzes({ limit: 50, page: 1 });
   },
+  beforeDestroy() {
+    this.openFirstQuiz(null);
+  },
   methods: {
     ...mapActions({
       findQuizzes: 'quiz/findCompletedQuizzes',
+      openFirstQuiz: 'quiz/openFirstQuiz',
     }),
   },
 };
