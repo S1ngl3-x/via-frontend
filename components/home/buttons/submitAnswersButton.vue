@@ -11,6 +11,11 @@ import { mapActions } from 'vuex';
 
 export default {
   name: 'SubmitAnswersButton',
+  data() {
+    return {
+      loadingStatus: false,
+    };
+  },
   computed: {
     readyToSubmit() {
       const questions = this.$store.getters['quiz/currentQuiz'].questions;
@@ -24,6 +29,7 @@ export default {
       clearCurrentQuiz: 'quiz/clearCurrentQuiz',
     }),
     submit() {
+      this.loadingStatus = true;
       this.submitCurrentQuiz();
       this.openFirstQuiz(0);
       this.clearCurrentQuiz();

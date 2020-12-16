@@ -1,5 +1,5 @@
 <template>
-  <v-btn class="mr-2" small :loading="loadingStatus" @click="generateQuiz"
+  <v-btn class="mr-2" small :loading="loadingStatus" @click="submit"
     >Generate Quiz
     <v-icon small class="pa-1" color="primary">mdi-repeat</v-icon>
   </v-btn>
@@ -19,6 +19,11 @@ export default {
     ...mapActions({
       generateQuiz: 'quiz/generateQuiz',
     }),
+    async submit() {
+      this.loadingStatus = true;
+      await this.generateQuiz();
+      this.loadingStatus = false;
+    },
   },
 };
 </script>
