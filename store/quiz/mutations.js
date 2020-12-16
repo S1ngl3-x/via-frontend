@@ -14,7 +14,6 @@ export default {
   },
 
   setOpenFirstQuiz(state, value) {
-    console.log('volam se v mutaci');
     state.openFirstQuiz = value;
   },
 };

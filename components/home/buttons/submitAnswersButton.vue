@@ -14,20 +14,20 @@ export default {
   computed: {
     readyToSubmit() {
       const questions = this.$store.getters['quiz/currentQuiz'].questions;
-      // because no typescript, I might just as well enjoy the dynamic madness
-      // eslint-disable-next-line no-prototype-builtins
-      return questions.filter((q) => q.hasOwnProperty('answer')).length === 5;
+      return questions.filter((q) => q.answer !== undefined).length === 5;
     },
   },
   methods: {
     ...mapActions({
-      submitQuiz: 'quiz/submitCurrentQuiz',
+      submitCurrentQuiz: 'quiz/submitCurrentQuiz',
       openFirstQuiz: 'quiz/openFirstQuiz',
+      clearCurrentQuiz: 'quiz/clearCurrentQuiz',
     }),
-    async submit() {
-      await this.submitQuiz;
+    submit() {
+      this.submitCurrentQuiz();
       this.openFirstQuiz(0);
-      await this.$router.push('/results');
+      this.clearCurrentQuiz();
+      this.$router.push('/results');
     },
   },
 };

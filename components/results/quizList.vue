@@ -37,11 +37,13 @@ export default {
   },
   beforeDestroy() {
     this.openFirstQuiz(null);
+    this.clearQuizzes();
   },
   methods: {
     ...mapActions({
       findQuizzes: 'quiz/findCompletedQuizzes',
       openFirstQuiz: 'quiz/openFirstQuiz',
+      clearQuizzes: 'quiz/clearQuizzes',
     }),
   },
 };

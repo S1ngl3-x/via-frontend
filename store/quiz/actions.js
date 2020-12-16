@@ -8,6 +8,14 @@ export default {
     }
   },
 
+  clearCurrentQuiz({ commit }) {
+    commit('setCurrentQuiz', {
+      id: null,
+      completed: null,
+      questions: [],
+    });
+  },
+
   async findCompletedQuizzes({ commit }, { limit, page }) {
     const quizzes = await this.$axios.$get('quiz/completed', { params: limit, page });
     if (quizzes) {
@@ -15,7 +23,12 @@ export default {
     }
   },
 
+  clearQuizzes({ commit }) {
+    commit('setQuizzes', []);
+  },
+
   async submitCurrentQuiz({ getters }) {
+    console.log('jsem v actions');
     await this.$axios.$patch('quiz', getters.currentQuiz);
   },
 
@@ -25,7 +38,6 @@ export default {
   },
 
   openFirstQuiz({ commit }, open) {
-    console.log('volam se v action');
     commit('setOpenFirstQuiz', open);
   },
 };
