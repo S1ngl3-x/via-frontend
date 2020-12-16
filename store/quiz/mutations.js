@@ -12,4 +12,9 @@ export default {
     updatedQuestion.answer = type;
     state.currentQuiz.questions.splice(index, 1, updatedQuestion);
   },
+
+  setOpenFirstQuiz(state, value) {
+    console.log('volam se v mutaci');
+    state.openFirstQuiz = value;
+  },
 };

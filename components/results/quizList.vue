@@ -5,10 +5,9 @@
 
       <v-spacer></v-spacer>
     </v-toolbar>
-    <v-expansion-panels popout focusable hover>
+    <v-expansion-panels v-if="quizzes" v-model="openFirst" popout focusable hover>
       <completed-quiz
         v-for="(quiz, i) in quizzes"
-        v-if="quizzes"
         :key="quiz.id"
         :questions="quiz.questions"
         :quiz-number="++i"
@@ -23,6 +22,11 @@ import { mapActions } from 'vuex';
 export default {
   name: 'QuizList',
   components: { CompletedQuiz },
+  data() {
+    return {
+      openFirst: this.$store.getters['quiz/openFirstQuiz'],
+    };
+  },
   computed: {
     quizzes() {
       return this.$store.getters['quiz/quizzes'].items;

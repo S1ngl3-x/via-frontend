@@ -22,9 +22,11 @@ export default {
   methods: {
     ...mapActions({
       submitQuiz: 'quiz/submitCurrentQuiz',
+      openFirstQuiz: 'quiz/openFirstQuiz',
     }),
     async submit() {
       await this.submitQuiz;
+      this.openFirstQuiz(0);
       await this.$router.push('/results');
     },
   },

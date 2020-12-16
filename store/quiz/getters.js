@@ -5,4 +5,7 @@ export default {
   quizzes(state) {
     return state.quizzes;
   },
+  openFirstQuiz(state) {
+    return state.openFirstQuiz;
+  },
 };

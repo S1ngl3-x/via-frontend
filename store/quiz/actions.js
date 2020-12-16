@@ -1,6 +1,5 @@
 export default {
   async generateQuiz({ commit }) {
-    console.log('jsem v actions');
     const quiz = await this.$axios.$post('quiz');
 
     if (quiz) {
@@ -10,7 +9,6 @@ export default {
   },
 
   async findCompletedQuizzes({ commit }, { limit, page }) {
-    console.log(`limit is: ${limit}`);
     const quizzes = await this.$axios.$get('quiz/completed', { params: limit, page });
     if (quizzes) {
       commit('setQuizzes', quizzes);
@@ -24,5 +22,10 @@ export default {
   answerQuestion({ commit }, { questionNumber, type }) {
     const arrayIndex = questionNumber - 1;
     commit('setQuestionAnswer', { index: arrayIndex, type });
+  },
+
+  openFirstQuiz({ commit }, open) {
+    console.log('volam se v action');
+    commit('setOpenFirstQuiz', open);
   },
 };
