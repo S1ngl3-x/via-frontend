@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div class="display-2">Welcome!</div>
-    <div class="display-1">How good are you at recognizing famous quotes?</div>
+    <div class="display-2">Welcome to the Celebrity App!</div>
   </div>
 </template>
 

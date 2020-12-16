@@ -15,9 +15,10 @@ export default {
   name: 'WelcomeCarouselInspiring',
   data() {
     return {
-      colors: ['indigo', 'warning', 'pink darken-2'],
+      colors: ['indigo', 'purple', 'pink darken-2', 'warning'],
       slides: [
         'Show Off Your INTELLECT',
+        'Recognize famous quotes',
         'Brewed For Cultural Experts',
         'Are you up to the challenge?!',
       ],
