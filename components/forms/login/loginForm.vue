@@ -55,8 +55,8 @@ export default {
 
   data() {
     return {
-      email: 'mail@mail.com',
-      password: 'admin',
+      email: '',
+      password: '',
       showPassword: false,
       lengthLimit: 30,
       invalidLogin: false,
