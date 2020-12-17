@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
     <div class="display-1">How It Works</div>
     <article>
       You sign up for a game account. Once you are logged in, there's an endless amount of
@@ -7,7 +7,7 @@
       quotes and your job is to match the quotes with persons they belong to. You can also
       review your previous results.
     </article>
-  </div>
+  </v-container>
 </template>
 
 <script>
