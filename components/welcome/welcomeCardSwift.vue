@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" color="#EA80FC" dark max-width="400">
+  <v-card class="mx-auto my-4" color="#EA80FC" dark max-width="400">
     <v-card-title>
       <v-icon large left> mdi-hand-heart </v-icon>
       <span class="title font-weight-light">Taylor Swift</span>
@@ -18,7 +18,7 @@
         <v-list-item-content>
           <v-list-item-title
             ><a href="https://taylor.rest" target="_blank">API</a>
-            for generating Taylor Swift quotes.
+            for Swift quotes.
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>

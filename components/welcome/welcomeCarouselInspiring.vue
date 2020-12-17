@@ -1,9 +1,15 @@
 <template>
-  <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover>
+  <v-carousel
+    cycle
+    height="300"
+    hide-delimiter-background
+    show-arrows-on-hover
+    class="mx-auto my-4"
+  >
     <v-carousel-item v-for="(slide, i) in slides" :key="i">
       <v-sheet :color="colors[i]" height="100%">
         <v-row class="fill-height" align="center" justify="center">
-          <div class="display-3">{{ slide }}</div>
+          <div class="display-3 pa-4 text-center">{{ slide }}</div>
         </v-row>
       </v-sheet>
     </v-carousel-item>
@@ -17,9 +23,9 @@ export default {
     return {
       colors: ['indigo', 'purple', 'pink darken-2', 'warning'],
       slides: [
-        'Show Off Your INTELLECT',
+        'Show off your INTELLECT',
         'Recognize famous quotes',
-        'Brewed For Cultural Experts',
+        'Brewed for cultural experts',
         'Are you up to the challenge?!',
       ],
     };

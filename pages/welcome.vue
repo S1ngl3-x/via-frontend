@@ -1,13 +1,11 @@
 <template>
-  <div>
+  <v-container>
     <WelcomeHeader />
     <WelcomeCarouselInspiring />
-    <v-row>
-      <WelcomeCardSwift />
-      <WelcomeCardTrump />
-    </v-row>
+    <WelcomeCardSwift />
+    <WelcomeCardTrump />
     <WelcomeManual />
-  </div>
+  </v-container>
 </template>
 
 <script>

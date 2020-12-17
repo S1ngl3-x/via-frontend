@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" color="#D50000" dark max-width="400">
+  <v-card class="mx-auto my-4" color="#D50000" dark max-width="400">
     <v-card-title>
       <v-icon large left> mdi-account-voice </v-icon>
       <span class="title font-weight-light">Donal Trump</span>
@@ -22,7 +22,7 @@
               target="_blank"
               >API</a
             >
-            for generating Donald Trump quotes.
+            for Trump quotes.
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
