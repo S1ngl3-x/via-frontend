@@ -28,4 +28,15 @@ export default {
       commit('setUser', response);
     }
   },
+
+  async logout({ commit }) {
+    const response = await this.$axios.post('auth/logout');
+    if (response.status === 200) {
+      commit('setUser', {
+        id: null,
+        email: null,
+      });
+      await this.$router.push('/login');
+    }
+  },
 };

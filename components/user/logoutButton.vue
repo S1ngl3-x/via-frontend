@@ -1,10 +1,12 @@
 <template>
-  <v-btn v-if="username" class="text-lowercase"
+  <v-btn v-if="username" class="text-lowercase" @click="logout"
     >{{ username }} <v-icon small class="px-2" color="red">mdi-logout</v-icon></v-btn
   >
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'LogoutButton',
   computed: {
@@ -18,6 +20,11 @@ export default {
         return '';
       }
     },
+  },
+  methods: {
+    ...mapActions({
+      logout: 'user/logout',
+    }),
   },
 };
 </script>
