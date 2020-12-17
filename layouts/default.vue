@@ -51,38 +51,6 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Home',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Results',
-          to: '/results',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'About',
-          to: '/welcome',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Login',
-          to: '/login',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Registration',
-          to: '/registration',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Testing',
-          to: '/testingPage',
-        },
-      ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
@@ -95,7 +63,56 @@ export default {
 
   computed: {
     user() {
-      return this.$store.getters;
+      return this.$store.getters['user/user'];
+    },
+    items() {
+      const items = [
+        {
+          icon: 'mdi-apps',
+          title: 'Home',
+          to: '/',
+          secret: true,
+          hideFromLoggedUser: false,
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Results',
+          to: '/results',
+          secret: true,
+          hideFromLoggedUser: false,
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'About',
+          to: '/welcome',
+          secret: false,
+          hideFromLoggedUser: false,
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Login',
+          to: '/login',
+          secret: false,
+          hideFromLoggedUser: true,
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Registration',
+          to: '/registration',
+          secret: false,
+          hideFromLoggedUser: true,
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Testing',
+          to: '/testingPage',
+          secret: false,
+          hideFromLoggedUser: false,
+        },
+      ];
+      return items.filter((item) =>
+        this.user.id ? !item.hideFromLoggedUser : !item.secret,
+      );
     },
   },
 

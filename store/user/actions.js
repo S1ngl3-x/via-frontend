@@ -1,9 +1,12 @@
 export default {
   async register({ commit }, { email, password }) {
     const createUserDto = { email, password };
-    await this.$axios.$post('auth/register', createUserDto).catch(() => {
+    const response = await this.$axios.$post('auth/register', createUserDto).catch(() => {
       throw new Error('User exists');
     });
+    if (response) {
+      await this.$router.push('/login');
+    }
   },
 
   async login({ commit }, { email, password }) {
@@ -13,6 +16,7 @@ export default {
     });
     if (response) {
       commit('setUser', response);
+      await this.$router.push('/');
     }
   },
 
@@ -23,6 +27,5 @@ export default {
     if (response) {
       commit('setUser', response);
     }
-    return response; // todo - remove later, no need to return anything
   },
 };

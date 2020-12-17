@@ -30,7 +30,7 @@
         @blur="$v.password.$touch()"
       ></v-text-field>
 
-      <v-btn class="mr-4" tabindex="3" type="submit" value="Submit"> submit </v-btn>
+      <v-btn class="mr-4" tabindex="3" type="submit" value="Submit"> login </v-btn>
       <v-btn tabindex="4" @click="clear"> clear </v-btn>
     </form>
     <ErrorInvalidLogin v-if="invalidLogin" />

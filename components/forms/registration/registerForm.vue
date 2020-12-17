@@ -47,7 +47,7 @@
       ></v-text-field>
 
       <v-btn class="mr-4" type="submit" value="Submit" tabindex="4" @click="submit">
-        submit
+        register
       </v-btn>
       <v-btn tabindex="5" @click="clear"> clear </v-btn>
     </form>
