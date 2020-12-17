@@ -16,7 +16,13 @@ export default {
     }
   },
 
-  async authenticate() {
-    return await this.$axios.$get('auth');
+  async authenticate({ commit }) {
+    const response = await this.$axios
+      .$get('auth')
+      .catch(() => this.$router.push('login'));
+    if (response) {
+      commit('setUser', response);
+    }
+    return response; // todo - remove later, no need to return anything
   },
 };

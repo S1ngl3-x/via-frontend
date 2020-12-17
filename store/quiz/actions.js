@@ -28,7 +28,6 @@ export default {
   },
 
   async submitCurrentQuiz({ getters }) {
-    console.log('jsem v actions');
     await this.$axios.$patch('quiz', getters.currentQuiz);
   },
 

@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <generated-quiz />
-  </div>
+  <generated-quiz />
 </template>
 
 <script>
