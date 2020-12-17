@@ -102,13 +102,6 @@ export default {
           secret: false,
           hideFromLoggedUser: true,
         },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Testing',
-          to: '/testingPage',
-          secret: false,
-          hideFromLoggedUser: false,
-        },
       ];
       return items.filter((item) =>
         this.user.id ? !item.hideFromLoggedUser : !item.secret,
