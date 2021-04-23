@@ -8,7 +8,7 @@
       prominent
       border="left"
     >
-      REGISTER
+      REGISTER 2
       <br />
       <br />
       Only registered users can use the Celebrity App
