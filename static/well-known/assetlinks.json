@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.adamlipowski.quizz",
+               "sha256_cert_fingerprints": ["SHA256: 47:80:09:6F:E2:C9:10:4F:18:BF:D1:E4:A7:53:A8:AB:1F:1B:86:4B:90:07:2D:27:FB:4B:25:0B:C6:9F:28:D9"] }
+}]
